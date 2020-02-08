@@ -11,7 +11,7 @@ def home():
 
 @app.route('/message', methods=['POST'])
 def display_new_message():
-    message = request.form('message')
+    message = request.form['message']
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     messages.append({"message": message, "ts": now})
     return 'success'
